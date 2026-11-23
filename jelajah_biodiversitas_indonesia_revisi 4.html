@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Website pembelajaran Geografi SMA tentang keanekaragaman hayati Indonesia.">
+<title>Jelajah Biodiversitas Indonesia</title>
+<style>
+:root{--forest:#153f2c;--green:#28734b;--leaf:#77a96b;--mint:#e8f1e5;--cream:#f7f7ef;--ink:#20372a;--muted:#65766a;--gold:#e7bd68;--white:#fff;--shadow:0 16px 45px rgba(22,55,36,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}button,a{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid #e7bd68;outline-offset:3px}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(21,63,44,.96);backdrop-filter:blur(12px);color:white;box-shadow:0 4px 22px #102c1d30}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.06em}.brand-mark{width:39px;height:39px;border-radius:13px;background:#d9ebd0;color:var(--forest);display:grid;place-items:center;font-size:22px}.brand small{display:block;color:#c2d9c3;font-size:9px;letter-spacing:.18em;font-weight:650}.navlinks{display:flex;gap:22px;align-items:center;font-size:13px;color:#e3eee4}.navlinks a:hover{color:#c8e6a9}.menu-btn{display:none;border:1px solid #ffffff55;background:transparent;color:white;border-radius:10px;padding:8px 12px}
+.hero{min-height:570px;display:flex;align-items:center;color:white;background:linear-gradient(90deg,rgba(8,37,23,.91),rgba(8,37,23,.57) 54%,rgba(8,37,23,.08)),url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=85') center/cover}
+.hero-content{padding:90px 0;max-width:680px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#d9edc9;font-size:11px;font-weight:800;letter-spacing:.19em;text-transform:uppercase}.eyebrow:before{content:"";width:28px;height:2px;background:var(--gold)}h1{font-size:clamp(42px,7vw,76px);line-height:1.04;letter-spacing:-.045em;margin:22px 0}.hero p{font-size:17px;color:#e0e9df;max-width:570px;margin:0 0 30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:999px;padding:13px 21px;background:#d8e9c7;color:#173e2a;font-weight:800;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);box-shadow:0 9px 22px #071e1255}.btn-outline{background:transparent;border:1px solid #ffffff9c;color:white;margin-left:8px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-42px;position:relative}.stat{background:white;border-radius:17px;padding:23px;box-shadow:var(--shadow);text-align:center}.stat strong{display:block;font-size:27px;color:var(--green)}.stat span{font-size:12px;color:var(--muted)}
+section{padding:88px 0;scroll-margin-top:76px}.section-head{max-width:680px;margin-bottom:34px}.kicker{color:var(--green);font-size:11px;letter-spacing:.17em;font-weight:850;text-transform:uppercase}.section-head h2{font-size:clamp(30px,4vw,44px);line-height:1.13;letter-spacing:-.035em;margin:10px 0 12px;color:var(--forest)}.section-head p{color:var(--muted);margin:0}.intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}.intro-photo{min-height:380px;border-radius:25px;background:url('https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1100&q=85') center/cover;box-shadow:var(--shadow);position:relative}.photo-note{position:absolute;bottom:18px;left:18px;background:#fffef0ed;border-radius:14px;padding:13px 16px;font-size:12px;font-weight:750;color:var(--forest)}.intro-copy p{color:var(--muted)}.pill{display:inline-block;background:var(--mint);color:var(--green);padding:7px 12px;border-radius:99px;font-size:11px;font-weight:800;margin:5px 5px 0 0}
+.levels{background:#edf3e9}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:white;border-radius:19px;overflow:hidden;box-shadow:0 8px 28px #1c452312;transition:.25s}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.card img{width:100%;height:190px;object-fit:cover;display:block}.card-body{padding:21px}.number{font-size:11px;color:var(--green);font-weight:900;letter-spacing:.14em}.card h3{margin:7px 0;color:var(--forest);font-size:19px}.card p{font-size:13px;color:var(--muted);margin:0}
+.regions{background:var(--forest);color:white}.regions .section-head h2{color:white}.regions .section-head p{color:#c6d8ca}.region-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.region{border:1px solid #ffffff2c;background:#ffffff0c;border-radius:18px;padding:23px}.region .tag{font-size:10px;letter-spacing:.14em;color:#c8e6a9;font-weight:850}.region h3{font-size:21px;margin:9px 0}.region p{font-size:13px;color:#d0dfd2}.region b{color:#e3efcf}.mapbox{margin-top:28px;border-radius:20px;background:#f4f5e9;color:var(--forest);padding:24px;display:grid;grid-template-columns:.8fr 1.2fr;gap:20px;align-items:center}.mapbox h3{margin:0 0 8px}.mapbox p{font-size:13px;color:var(--muted);margin:0}.islands{display:flex;justify-content:space-around;gap:9px;align-items:center;flex-wrap:wrap}.island{width:85px;height:100px;border-radius:48% 52% 55% 45%;background:#8eb77b;display:grid;place-items:center;text-align:center;color:#153f2c;font-size:11px;font-weight:850;transform:rotate(-9deg);padding:8px}.island:nth-child(2){height:72px;background:#d6b875;transform:rotate(12deg)}.island:nth-child(3){height:90px;background:#7aa9a0;transform:rotate(-3deg)}.island:nth-child(4){height:65px;background:#9cbd79;transform:rotate(8deg)}
+.species{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.species .card img{height:170px}.species .card-body{padding:16px}.species h3{font-size:16px}.species small{color:var(--green);font-weight:750}
+.threats{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.threat-photo{height:390px;border-radius:24px;background:url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=85') center/cover}.checklist{display:grid;gap:12px;margin-top:20px}.check{display:flex;gap:12px;align-items:flex-start;background:white;padding:14px;border-radius:13px;box-shadow:0 4px 14px #173d2510}.check i{font-style:normal;color:var(--green);font-weight:900}
+.gallery{background:#edf3e9}.gallery-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:180px 180px;gap:13px}.gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:16px}.gallery-grid img:first-child{grid-row:span 2}
+
+.quiz-section{background:#f3f6ef}.quiz-wrap{max-width:850px}.quiz-card{background:#fff;border:1px solid #e1e9dc;border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 5px 18px #173d250b}.quiz-card h3{font-size:16px;margin:0 0 12px;color:var(--forest)}.quiz-option{display:flex;gap:10px;align-items:flex-start;padding:9px 11px;border-radius:10px;margin:5px 0;background:#f7f9f5;cursor:pointer;font-size:14px}.quiz-option:hover{background:#edf4e9}.quiz-option input{margin-top:5px;accent-color:var(--green)}.quiz-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:20px}.quiz-result{display:none;margin-top:20px;padding:20px;border-radius:15px;background:#e7f1e2;color:var(--forest)}.quiz-feedback{font-size:13px;color:var(--muted);margin:8px 0 0}.quiz-card.correct{border-color:#70a978}.quiz-card.wrong{border-color:#d5a16c}.quiz-note{font-size:13px;color:var(--muted)}
+footer{background:#102f20;color:#dce9dc;padding:42px 0}.foot{display:flex;justify-content:space-between;gap:25px;align-items:center}.foot p{font-size:12px;color:#a9c2ad;margin:5px 0}
+@media(max-width:800px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:var(--forest);padding:20px;flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.menu-btn{display:block}.intro-grid,.threats,.mapbox{grid-template-columns:1fr}.cards,.region-grid{grid-template-columns:1fr 1fr}.species{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:170px 150px}.gallery-grid img:first-child{grid-row:span 2}.stats{gap:8px}.stat{padding:16px 8px}.stat strong{font-size:21px}.stat span{font-size:10px}}
+@media(max-width:520px){.wrap{width:min(100% - 28px,1120px)}.hero{min-height:570px}.hero-content{padding:70px 0}.hero p{font-size:15px}.btn-outline{margin:10px 0 0}.cards,.region-grid{grid-template-columns:1fr}.species{gap:10px}.species .card img{height:130px}.species .card-body{padding:12px}.species h3{font-size:14px}.stats{margin-top:-28px}.stat strong{font-size:18px}.stat span{font-size:9px}section{padding:65px 0}.gallery-grid{grid-template-rows:140px 120px}.foot{display:block}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#beranda"><span class="brand-mark">🌿</span><span>BIODIVERSITY<small>EXPLORE INDONESIA</small></span></a>
+  <nav class="navlinks" id="navlinks">
+   <a href="#beranda">Beranda</a><a href="#materi">Materi</a><a href="#persebaran">Persebaran</a><a href="#spesies">Flora & Fauna</a><a href="#pelestarian">Pelestarian</a><a href="#sumber">Jelajah Data</a><a href="#kuis">Kuis</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰ Menu</button>
+ </div>
+</header>
+<main>
+<section class="hero" id="beranda">
+ <div class="wrap hero-content">
+  <span class="eyebrow">MEDIA PEMBELAJARAN GEOGRAFI SMA</span>
+  <h1>Jelajahi Kekayaan<br><span style="color:#cbe6a9">Hayati Indonesia.</span></h1>
+  <p>Satu negeri, ribuan kehidupan, dan keindahan alam yang perlu kita jaga. Kenali persebaran flora dan fauna serta keunikan ekosistem Nusantara.</p>
+  <a class="btn" href="#materi">Mulai Eksplorasi <span>→</span></a>
+ </div>
+</section>
+<div class="wrap stats">
+ <div class="stat"><strong>17.000+</strong><span>Pulau di Indonesia</span></div>
+ <div class="stat"><strong>3 Zona</strong><span>Persebaran fauna utama</span></div>
+ <div class="stat"><strong>Beragam</strong><span>Ekosistem darat dan perairan</span></div>
+</div>
+<section id="materi">
+ <div class="wrap intro-grid">
+  <div class="intro-copy"><span class="kicker">01 · Kenali lebih dekat</span><div class="section-head"><h2>Apa itu keanekaragaman hayati?</h2><p>Keanekaragaman hayati atau biodiversitas adalah seluruh variasi kehidupan di bumi. Keanekaragaman ini mencakup perbedaan dalam satu spesies, perbedaan antarspesies, dan variasi ekosistem tempat makhluk hidup tinggal.</p></div>
+   <p>Indonesia memiliki kekayaan hayati tinggi karena beriklim tropis dan berbentuk kepulauan. Suhu hangat, curah hujan, serta kondisi tanah dan relief yang beragam menyediakan banyak habitat. Letaknya di antara Asia dan Australia juga memengaruhi persebaran flora dan fauna.</p>
+   <p>Biodiversitas penting bagi lingkungan dan manusia. Hutan membantu menjaga tata air, serangga berperan dalam penyerbukan, sedangkan tumbuhan dan hewan menyediakan pangan, bahan obat, serta sumber penelitian.</p>
+   <span class="pill">Flora</span><span class="pill">Fauna</span><span class="pill">Ekosistem</span>
+  </div>
+  <div class="intro-photo"><div class="photo-note">🌱 Kekayaan alam adalah warisan bersama</div></div>
+ </div>
+</section>
+<section class="levels">
+ <div class="wrap"><div class="section-head"><span class="kicker">02 · Tiga tingkatan</span><h2>Memahami tingkat biodiversitas</h2><p>Keanekaragaman hayati dapat dikenali melalui tiga tingkatan yang saling berhubungan.</p></div>
+  <div class="cards">
+   <article class="card"><img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" alt="Beragam tanaman"><div class="card-body"><span class="number">TINGKAT 01</span><h3>Keanekaragaman Gen</h3><p>Variasi gen dalam satu spesies yang dapat terlihat dari warna, ukuran, bentuk, atau ketahanan terhadap lingkungan. Contohnya, berbagai varietas padi memiliki ciri berbeda meskipun masih termasuk spesies yang sama.</p></div></article>
+   <article class="card"><img src="https://images.unsplash.com/photo-1480044965905-02098d419e96?auto=format&fit=crop&w=800&q=80" alt="Beragam burung"><div class="card-body"><span class="number">TINGKAT 02</span><h3>Keanekaragaman Jenis</h3><p>Perbedaan jenis makhluk hidup yang menempati suatu wilayah. Hutan Kalimantan, misalnya, menjadi habitat orangutan, bekantan, burung enggang, dan berbagai jenis anggrek.</p></div></article>
+   <article class="card"><img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80" alt="Hutan tropis"><div class="card-body"><span class="number">TINGKAT 03</span><h3>Keanekaragaman Ekosistem</h3><p>Perbedaan lingkungan beserta makhluk hidup di dalamnya. Hutan hujan, mangrove, savana, dan terumbu karang memiliki kondisi alam serta organisme yang khas.</p></div></article>
+  </div>
+ </div>
+</section>
+<section class="regions" id="persebaran">
+ <div class="wrap"><div class="section-head"><span class="kicker">03 · Geografi Indonesia</span><h2>Persebaran fauna Nusantara</h2><p>Secara umum, persebaran fauna Indonesia dibagi menjadi tiga wilayah berdasarkan karakteristik geografis dan sejarah biogeografinya.</p></div>
+  <div class="region-grid">
+   <article class="region"><span class="tag">ZONA BARAT</span><h3>Asiatis</h3><p>Meliputi Sumatra, Jawa, Kalimantan, dan Bali. Faunanya memiliki kemiripan dengan daratan Asia, seperti mamalia besar, primata, dan burung hutan. Contohnya gajah Sumatra, harimau Sumatra, orangutan, dan badak Jawa.</p><b>Contoh: gajah Sumatra, harimau Sumatra, orangutan, dan badak Jawa.</b></article>
+   <article class="region"><span class="tag">ZONA TENGAH</span><h3>Peralihan (Wallacea)</h3><p>Meliputi Sulawesi, Nusa Tenggara, dan sebagian Maluku. Faunanya memiliki perpaduan ciri Asia dan Australia serta banyak spesies endemik, yaitu spesies yang secara alami hanya ditemukan di wilayah tertentu.</p><b>Contoh: komodo, anoa, babirusa, dan burung maleo.</b></article>
+   <article class="region"><span class="tag">ZONA TIMUR</span><h3>Australis</h3><p>Meliputi Papua dan Kepulauan Aru. Faunanya mirip dengan fauna Australia, seperti burung berwarna mencolok dan mamalia berkantung. Contohnya cenderawasih, kasuari, dan kanguru pohon.</p><b>Contoh: cenderawasih, kasuari, dan kanguru pohon.</b></article>
+  </div>
+  <div class="mapbox" style="display:block;padding:clamp(18px,3vw,30px)">
+   <h3 style="margin-top:0">Garis Wallace, Weber, dan Lydekker</h3>
+   <p>Garis Wallace, Weber, dan Lydekker membantu menjelaskan perbedaan persebaran fauna. Garis-garis ini bukan batas provinsi atau negara, melainkan penanda biogeografi yang berkaitan dengan sejarah alam kawasan Indonesia.</p>
+   <div class="region-grid" style="margin-top:18px">
+    <article class="region"><h3>Garis Wallace</h3><p>Garis Wallace menjadi penanda antara wilayah fauna Asiatis dan kawasan peralihan. Letaknya melewati laut di antara Kalimantan–Sulawesi serta Bali–Lombok. Perbedaan fauna di kedua sisi berkaitan dengan sejarah geologi wilayah tersebut.</p></article>
+    <article class="region"><h3>Garis Weber</h3><p>Garis Weber berada di kawasan peralihan dan menggambarkan wilayah tempat pengaruh fauna Asia dan Australia relatif berimbang. Wilayah sekitarnya memiliki fauna khas dan banyak spesies endemik.</p></article>
+    <article class="region"><h3>Garis Lydekker</h3><p>Garis Lydekker menandai sisi timur kawasan peralihan menuju wilayah Australis. Garis ini mengikuti tepi Paparan Sahul, di sebelah barat Papua dan Kepulauan Aru. Fauna di wilayah Australis memiliki kemiripan dengan Australia, seperti cenderawasih dan kasuari.</p></article>
+   </div>
+   <p style="margin-bottom:0">Ketiga garis tersebut membantu menjelaskan pola persebaran fauna Indonesia. Letaknya merupakan konsep biogeografi dan dapat digambarkan berbeda secara rinci pada berbagai sumber peta atau kajian ilmiah.</p>
+  </div>
+ </div>
+</section>
+<section id="spesies">
+ <div class="wrap"><div class="section-head"><span class="kicker">04 · Spesies khas</span><h2>Kenali penghuni Nusantara</h2><p>Berikut beberapa flora dan fauna yang menjadi bagian dari kekayaan hayati Indonesia.</p></div>
+  <div class="species">
+   <article class="card"><img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=700&q=80" alt="Komodo"><div class="card-body"><small>FAUNA · NTT</small><h3>Komodo</h3><p>Kadal besar pemangsa yang hidup alami di beberapa pulau Nusa Tenggara Timur, seperti Komodo, Rinca, Gili Motang, dan sebagian wilayah Flores. Komodo bergantung pada kondisi habitat savana, hutan musim, serta ketersediaan mangsa.</p></div></article>
+   <article class="card"><img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=700&q=80" alt="Orangutan"><div class="card-body"><small>FAUNA · SUMATRA & KALIMANTAN</small><h3>Orangutan</h3><p>Primata yang banyak menghabiskan waktu di pepohonan dan berperan dalam penyebaran biji melalui aktivitas makannya. Kelangsungan hidup orangutan sangat dipengaruhi oleh ketersediaan hutan yang luas dan terhubung.</p></div></article>
+   <article class="card"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=80" alt="Bunga"><div class="card-body"><small>FLORA · SUMATRA</small><h3>Rafflesia</h3><p>Tumbuhan parasit yang mengambil nutrisi dari tumbuhan inang tertentu. Rafflesia dikenal karena bunganya yang berukuran besar dan masa mekarnya yang singkat. Habitat hutan yang terjaga penting bagi kelangsungan hidup tumbuhan ini.</p></div></article>
+   <article class="card"><img src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=700&q=80" alt="Burung di alam" onerror="this.src='https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=700&q=80'"><div class="card-body"><small>FAUNA · PAPUA</small><h3>Cenderawasih</h3><p>Kelompok burung khas Papua yang terkenal dengan warna bulu dan perilaku untuk menarik pasangan. Sebagian jenis cenderawasih hidup di hutan, sehingga perlindungan tutupan hutan sangat penting bagi keberadaannya.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="faktor" class="levels">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">05 · Faktor pembentuk</span><h2>Mengapa biodiversitas Indonesia begitu beragam?</h2><p>Perbedaan kondisi alam di setiap pulau menciptakan lingkungan hidup yang tidak sama. Hal tersebut memengaruhi jenis organisme yang dapat tumbuh dan berkembang di suatu wilayah.</p></div>
+  <div class="cards">
+   <article class="card"><div class="card-body"><span class="number">FAKTOR 01</span><h3>Iklim tropis</h3><p>Sinar matahari dan suhu hangat sepanjang tahun mendukung pertumbuhan tumbuhan. Curah hujan tinggi di banyak wilayah juga membantu terbentuknya hutan hujan tropis sebagai habitat satwa.</p></div></article>
+   <article class="card"><div class="card-body"><span class="number">FAKTOR 02</span><h3>Bentuk kepulauan</h3><p>Laut memisahkan pulau-pulau sehingga populasi organisme berkembang dalam kondisi berbeda. Dalam waktu lama, keadaan ini dapat mendorong terbentuknya spesies endemik.</p></div></article>
+   <article class="card"><div class="card-body"><span class="number">FAKTOR 03</span><h3>Relief dan habitat</h3><p>Gunung, dataran rendah, sungai, rawa, pesisir, dan laut memiliki kondisi lingkungan berbeda. Keragaman habitat ini menyediakan tempat hidup bagi berbagai jenis tumbuhan dan hewan.</p></div></article>
+  </div>
+ </div>
+</section>
+<section>
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">06 · Peran biodiversitas</span><h2>Manfaat bagi kehidupan</h2><p>Keanekaragaman hayati bukan hanya memperindah alam. Keberadaannya mendukung keseimbangan lingkungan dan kehidupan manusia.</p></div>
+  <div class="region-grid" style="grid-template-columns:repeat(2,1fr)">
+   <article class="region" style="background:#f0f5ec;color:#20372a;border-color:#dce8d7"><h3 style="color:#153f2c">Menjaga keseimbangan ekosistem</h3><p style="color:#65766a">Setiap organisme memiliki peran, misalnya sebagai produsen, konsumen, pengurai, penyerbuk, atau penyebar biji. Hilangnya satu kelompok dapat memengaruhi hubungan makan dan proses ekologis lainnya.</p></article>
+   <article class="region" style="background:#f0f5ec;color:#20372a;border-color:#dce8d7"><h3 style="color:#153f2c">Sumber pangan dan obat</h3><p style="color:#65766a">Berbagai tumbuhan, hewan, jamur, dan mikroorganisme dimanfaatkan sebagai bahan pangan, bahan baku obat, serta sumber senyawa yang berguna bagi penelitian.</p></article>
+   <article class="region" style="background:#f0f5ec;color:#20372a;border-color:#dce8d7"><h3 style="color:#153f2c">Mendukung ekonomi masyarakat</h3><p style="color:#65766a">Pertanian, perikanan, kehutanan berkelanjutan, dan ekowisata dapat memberikan manfaat ekonomi. Pemanfaatannya perlu memperhatikan daya pulih alam agar sumber daya tidak habis.</p></article>
+   <article class="region" style="background:#f0f5ec;color:#20372a;border-color:#dce8d7"><h3 style="color:#153f2c">Nilai pendidikan dan budaya</h3><p style="color:#65766a">Flora dan fauna menjadi bagian dari identitas daerah, pengetahuan lokal, penelitian, serta kegiatan pembelajaran tentang hubungan manusia dan lingkungan.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="gallery">
+ <div class="wrap"><div class="section-head"><span class="kicker">07 · Galeri alam</span><h2>Keindahan dalam setiap ekosistem</h2><p>Dari hutan tropis hingga dunia bawah laut, setiap ekosistem memiliki peran penting.</p></div>
+  <div class="gallery-grid">
+   <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=85" alt="Hutan tropis">
+   <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=700&q=85" alt="Laut">
+   <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=700&q=85" alt="Pepohonan">
+   <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=700&q=85" alt="Terumbu karang">
+   <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=85" alt="Lanskap alam">
+  </div>
+ </div>
+</section>
+<section id="pelestarian">
+ <div class="wrap threats">
+  <div class="threat-photo" role="img" aria-label="Hutan tropis"></div>
+  <div><span class="kicker">08 · Aksi nyata</span><div class="section-head"><h2>Jaga keanekaragaman hayati</h2><p>Keanekaragaman hayati terancam oleh kerusakan habitat, pencemaran, perubahan iklim, dan perburuan berlebihan. Ancaman tersebut dapat menurunkan populasi bahkan menghilangkan spesies dari habitatnya. Pelestarian perlu dilakukan melalui perlindungan alam dan kebiasaan hidup yang lebih ramah lingkungan.</p></div>
+   <div class="checklist">
+    <div class="check"><i>✓</i><div><b>In situ</b><br><small>Melindungi tumbuhan dan satwa di habitat alaminya. Upaya ini dilakukan melalui taman nasional, cagar alam, suaka margasatwa, serta perlindungan kawasan penting lainnya.</small></div></div>
+    <div class="check"><i>✓</i><div><b>Ex situ</b><br><small>Melestarikan organisme di luar habitat alaminya, misalnya melalui kebun raya, kebun binatang konservasi, bank benih, kultur jaringan, dan program penangkaran yang terencana.</small></div></div>
+    <div class="check"><i>✓</i><div><b>Perilaku ramah lingkungan</b><br><small>Mengurangi penggunaan plastik sekali pakai, tidak membeli atau memelihara satwa dilindungi, memilih produk yang tidak merusak habitat, serta ikut menjaga kebersihan sungai, pantai, dan ruang hijau.</small></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+<section id="sumber" class="levels">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">09 · Jelajah lebih jauh</span><h2>Temukan data dan informasi biodiversitas Indonesia</h2><p>Kumpulan tautan berikut dapat dibuka untuk melihat foto pengamatan, persebaran spesies, koleksi tumbuhan, dan informasi lingkungan. Gunakan sebagai bahan eksplorasi lanjutan setelah mempelajari materi di website ini.</p></div>
+  <div class="cards">
+   <article class="card"><div class="card-body"><span class="number">PETA & PERSEBARAN</span><h3>Peta Biodiversitas Indonesia</h3><p>Jelajahi visualisasi sebaran catatan pengamatan keanekaragaman hayati berdasarkan provinsi. Cocok untuk melihat bagaimana data biodiversitas tersebar di berbagai wilayah Indonesia.</p><p style="margin-top:14px"><a class="btn" href="https://www.gbif.co.id/peta" target="_blank" rel="noopener">Buka Peta Biodiversitas ↗</a></p></div></article>
+   <article class="card"><div class="card-body"><span class="number">FOTO PENGAMATAN</span><h3>iNaturalist Indonesia</h3><p>Lihat dokumentasi foto organisme yang dijumpai oleh komunitas pengamat alam. Pengguna dapat menelusuri spesies, lokasi pengamatan, dan proyek biodiversitas di Indonesia.</p><p style="margin-top:14px"><a class="btn" href="https://www.inaturalist.org/places/indonesia" target="_blank" rel="noopener">Jelajahi iNaturalist ↗</a></p></div></article>
+   <article class="card"><div class="card-body"><span class="number">TUMBUHAN</span><h3>IBFI – Indonesian Biodiversity</h3><p>Platform ilmiah terbuka untuk mengeksplorasi informasi spesies tumbuhan Indonesia, termasuk taksonomi, pemanfaatan, dan informasi fitokimia.</p><p style="margin-top:14px"><a class="btn" href="https://ibfi.ibios.org/" target="_blank" rel="noopener">Jelajahi Data Tumbuhan ↗</a></p></div></article>
+   <article class="card"><div class="card-body"><span class="number">KOLEKSI ILMIAH</span><h3>SEAMEO BIOTROP – Biodiversity Management System</h3><p>Telusuri koleksi dan catatan spesimen seperti tumbuhan hutan, gulma, serangga, dan fungi. Situs ini berguna untuk mengenal contoh koleksi biodiversitas tropis.</p><p style="margin-top:14px"><a class="btn" href="https://biodb.biotrop.org/site/index" target="_blank" rel="noopener">Lihat Koleksi BIOTROP ↗</a></p></div></article>
+   <article class="card"><div class="card-body"><span class="number">DATA LINGKUNGAN</span><h3>SATU DATA Kementerian Lingkungan Hidup</h3><p>Portal data pemerintah yang menyediakan dataset dan informasi lingkungan hidup, termasuk topik yang berkaitan dengan keanekaragaman hayati. Periksa keterangan dan sumber pada setiap dataset.</p><p style="margin-top:14px"><a class="btn" href="https://satudata.kemenlh.go.id/" target="_blank" rel="noopener">Buka Portal Data ↗</a></p></div></article>
+   <article class="card"><div class="card-body"><span class="number">DATABASE SPESIES</span><h3>Indonesia Tropical Species Database</h3><p>Telusuri profil spesies dari kelompok tumbuhan, hewan, dan fungi. Informasi dapat digunakan untuk mengenali nama ilmiah serta karakteristik spesies.</p><p style="margin-top:14px"><a class="btn" href="https://spesies.biodiversitas-indonesia.or.id/" target="_blank" rel="noopener">Cari Informasi Spesies ↗</a></p></div></article>
+  </div>
+  <p style="color:#65766a;font-size:12px;margin-top:22px">Catatan: setiap platform memiliki cakupan, cara pengumpulan, dan tingkat kelengkapan data yang berbeda. Untuk tugas sekolah atau penelitian, cantumkan nama situs dan tanggal akses serta periksa kembali informasi spesies pada sumber ilmiah atau lembaga terkait.</p>
+ </div>
+</section>
+\n
+<section id="kuis" class="quiz-section">
+ <div class="wrap quiz-wrap">
+  <div class="section-head"><span class="kicker">10 · Uji pemahaman</span><h2>Seberapa jauh kamu mengenal biodiversitas?</h2><p>Yuk, cek pemahamanmu lewat 10 pertanyaan singkat dari materi yang sudah dipelajari. Pilih satu jawaban yang paling tepat di setiap soal, lalu tekan tombol periksa jawaban.</p></div>
+  <form id="biodiversityQuiz">
+   <div id="quizQuestions"></div>
+   <div class="quiz-actions"><button class="btn" type="submit">Periksa Jawaban</button><button class="btn" type="button" id="resetQuiz" style="background:#e6ece3">Ulangi Kuis</button></div>
+  </form>
+  <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+  <p class="quiz-note">Tidak perlu terburu-buru. Baca kembali materi jika masih ada pertanyaan yang terasa sulit.</p>
+ </div>
+</section>
+
+</main>
+<footer><div class="wrap foot"><div><div class="brand"><span class="brand-mark">🌿</span><span>BIODIVERSITY<small>EXPLORE INDONESIA</small></span></div><p>Media pembelajaran Geografi SMA · Keanekaragaman Hayati</p></div><p>Kenali · Pelajari · Lestarikan<br>© 2026 Jelajah Biodiversitas Indonesia</p></div></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+const quizData=[
+ {q:'Keanekaragaman hayati mencakup variasi pada tingkat ...',o:['Gen, jenis, dan ekosistem','Individu, populasi, dan benua','Iklim, tanah, dan batuan','Desa, kota, dan provinsi'],a:0,e:'Biodiversitas dibedakan menjadi keanekaragaman gen, jenis, dan ekosistem.'},
+ {q:'Perbedaan warna dan ukuran pada varietas padi yang masih satu spesies menunjukkan keanekaragaman ...',o:['Ekosistem','Gen','Jenis','Habitat'],a:1,e:'Variasi sifat dalam satu spesies merupakan keanekaragaman gen.'},
+ {q:'Hutan mangrove, savana, dan terumbu karang merupakan contoh keanekaragaman ...',o:['Gen','Populasi','Ekosistem','Individu'],a:2,e:'Ketiganya memiliki kondisi lingkungan dan komunitas makhluk hidup yang berbeda.'},
+ {q:'Fauna Asiatis di Indonesia terutama ditemukan di wilayah ...',o:['Papua dan Kepulauan Aru','Sulawesi dan Nusa Tenggara','Sumatra, Jawa, Kalimantan, dan Bali','Maluku bagian timur saja'],a:2,e:'Zona Asiatis meliputi Sumatra, Jawa, Kalimantan, dan Bali.'},
+ {q:'Komodo, anoa, dan babirusa merupakan contoh fauna khas zona ...',o:['Asiatis','Peralihan (Wallacea)','Australis','Arktik'],a:1,e:'Komodo, anoa, dan babirusa merupakan fauna khas kawasan peralihan.'},
+ {q:'Garis Wallace menjadi penanda biogeografi antara ...',o:['Asiatis dan peralihan','Peralihan dan Australis','Papua dan Australia','Jawa dan Sumatra'],a:0,e:'Garis Wallace memisahkan wilayah fauna bercorak Asiatis dengan kawasan peralihan.'},
+ {q:'Garis Weber digunakan untuk menggambarkan kawasan tempat ...',o:['Fauna Asia sepenuhnya mendominasi','Fauna Australia sepenuhnya mendominasi','Pengaruh fauna Asia dan Australia relatif berimbang','Tidak terdapat kehidupan hewan'],a:2,e:'Garis Weber berada di kawasan peralihan dengan pengaruh fauna Asia dan Australia yang relatif berimbang.'},
+ {q:'Garis Lydekker berkaitan dengan batas kawasan peralihan menuju fauna ...',o:['Asiatis','Australis','Eropa','Afrika'],a:1,e:'Garis Lydekker menandai sisi timur kawasan peralihan menuju wilayah bercorak Australis.'},
+ {q:'Apa yang dapat mendorong munculnya spesies endemik di pulau-pulau Indonesia?',o:['Pulau terpisah oleh laut dalam waktu lama','Semua pulau memiliki iklim yang sama','Tidak ada perbedaan habitat','Semua organisme berpindah setiap hari'],a:0,e:'Keterpisahan pulau membuat populasi berkembang dalam kondisi berbeda dan dapat mendorong terbentuknya spesies endemik.'},
+ {q:'Pelestarian in situ dilakukan dengan cara ...',o:['Menyimpan benih di laboratorium','Melindungi satwa dan tumbuhan di habitat alaminya','Memindahkan semua satwa ke kebun binatang','Mengoleksi tumbuhan sebagai hiasan rumah'],a:1,e:'In situ berarti pelestarian dilakukan di habitat alami organisme tersebut.'}
+];
+const quizContainer=document.getElementById('quizQuestions');
+function renderQuiz(){quizContainer.innerHTML=quizData.map((item,i)=>`<article class="quiz-card" id="quiz-card-${i}"><h3>${i+1}. ${item.q}</h3>${item.o.map((opt,j)=>`<label class="quiz-option"><input type="radio" name="q${i}" value="${j}"><span>${String.fromCharCode(65+j)}. ${opt}</span></label>`).join('')}<p class="quiz-feedback" id="quiz-feedback-${i}" hidden></p></article>`).join('');document.getElementById('quizResult').style.display='none';}
+document.getElementById('biodiversityQuiz').addEventListener('submit',e=>{e.preventDefault();let score=0,answered=0;quizData.forEach((item,i)=>{const chosen=document.querySelector(`input[name="q${i}"]:checked`);const card=document.getElementById(`quiz-card-${i}`),feedback=document.getElementById(`quiz-feedback-${i}`);card.classList.remove('correct','wrong');if(chosen){answered++;if(Number(chosen.value)===item.a){score++;card.classList.add('correct');feedback.textContent='Tepat! '+item.e;}else{card.classList.add('wrong');feedback.textContent='Belum tepat. '+item.e;}}else{card.classList.add('wrong');feedback.textContent='Belum dijawab. '+item.e;}feedback.hidden=false;});const result=document.getElementById('quizResult');result.style.display='block';result.innerHTML=`<h3 style="margin:0 0 6px">Nilaimu: ${score} dari 10</h3><p style="margin:0">Kamu sudah menjawab ${answered} soal. ${score>=8?'Hebat! Pemahamanmu sudah sangat baik.':score>=5?'Bagus! Baca kembali bagian yang masih keliru, lalu coba lagi.':'Tetap semangat! Pelajari kembali materi dan ulangi kuisnya.'}</p>`;result.scrollIntoView({behavior:'smooth',block:'center'});});
+document.getElementById('resetQuiz').addEventListener('click',()=>{document.getElementById('biodiversityQuiz').reset();renderQuiz();window.scrollTo({top:document.getElementById('kuis').offsetTop-70,behavior:'smooth'});});
+renderQuiz();
+
+</script>
+</body>
+</html>
